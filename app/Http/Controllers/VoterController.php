@@ -31,7 +31,7 @@ class VoterController extends Controller
             for($x=0; $x < 10; $x++)
             {
                 $pos = rand(0, strlen($karakter)-1);
-                $string .= $karakter{$pos};
+                $string .= $karakter[$pos];
 
             } $token = strtoupper($string);
             
