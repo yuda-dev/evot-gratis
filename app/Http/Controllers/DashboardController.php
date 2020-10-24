@@ -16,14 +16,7 @@ class DashboardController extends Controller
         $title = 'Dashboard';
         $pemilih = Pemilih::where('user_id', Auth::id())->get();
         $kandidat = Kandidat::all();
-        $nama_kandidat =[];
-        $jumlah_suara_kandidat = [];
-        foreach($kandidat as $kdt)
-        {
-            $nama_kandidat[] = $kdt->nama;
-            $jumlah_suara_kandidat[] = $kdt->jumlah_suara;
-        }
-        return view('dashboard.index',compact('title','kandidat','nama_kandidat','jumlah_suara_kandidat','pemilih'));
+        return view('dashboard.index',compact('title','kandidat','pemilih'));
     }
 
     public function store(Request $request)
@@ -38,7 +31,7 @@ class DashboardController extends Controller
             for($x=0; $x < 10; $x++)
             {
                 $pos = rand(0, strlen($karakter)-1);
-                $string .= $karakter{$pos};
+                $string .= $karakter[$pos];
 
             } $token = strtoupper($string);
             
