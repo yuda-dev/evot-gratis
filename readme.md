@@ -1,4 +1,4 @@
-Panduan menggunakan :
+<p>Panduan menggunakan :</p>
 
 1.buat database dengan nama e_vot
 2.lalu importkan db nya ( ada diluar project dng nama e_vote.sql )
